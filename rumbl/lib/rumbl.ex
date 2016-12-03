@@ -9,8 +9,8 @@ defmodule Rumbl do
     # Define workers and child supervisors to be supervised
     children = [
       supervisor(Rumbl.Repo, []),
-      supervisor(Rumbl.Endpoint, []),
-      worker(Rumbl.Counter, [5])
+      supervisor(Rumbl.InfoSys.Supervisor, []),
+      supervisor(Rumbl.Endpoint, [])
     ]
 
     opts = [strategy: :one_for_one, name: Rumbl.Supervisor]

@@ -14,7 +14,7 @@ defmodule Rumbl.Counter do
   end
   
   def init(initial_val) do
-    # Process.send_after(self, :tick, 1000)
+    Process.send_after(self, :tick, 1000)
     {:ok, initial_val}
   end
   
